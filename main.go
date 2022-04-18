@@ -1,10 +1,16 @@
 package main
 
 import (
-	"main/parser"
+	"main/audit"
+	"main/pre"
 )
 
 func main() {
-	file := `file.txt`
-	parser.Readlines(file)
+	file := `test.txt`
+	data := pre.Readlines(file)
+	//fmt.Println(data)
+	for i := 0; i < len(data); i++ {
+		audit.Error_based_detection(data[i])
+	}
+	// 按切片解析输入
 }
