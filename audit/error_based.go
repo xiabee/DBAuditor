@@ -21,7 +21,7 @@ func Error_based_detection(data string) {
 
 	result1 := reg1.FindAllStringSubmatch(data, -1)
 	if result1 != nil {
-		fmt.Println("Potential Error-Based Injection: ", data)
+		fmt.Println("[+] Potential Error-Based Injection: ", data)
 		// 匹配到关键字
 	}
 }
