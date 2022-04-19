@@ -1,0 +1,67 @@
+#time-based boolean tests
+and sleep\(( )*[1-9]\d*( )*\)
+or sleep\(( )*[1-9]\d*( )*\)
+and \(select \* from \(select\(sleep\(( )*[1-9]\d*( )*\)\)\)( )*[a-zA-Z]\w*( )*\)
+or \(select \* from \(select\(sleep\(( )*[1-9]\d*( )*\)\)\)( )*[a-zA-Z]\w*( )*\)
+and ( )*[1-9]\d+( )*=benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)
+or ( )*[1-9]\d+( )*=benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)
+rlike sleep\(( )*[1-9]\d*( )*\)
+rlike \(select \* from \(select\(sleep\(( )*[1-9]\d*( )*\)\)\)( )*[a-zA-Z]\w*( )*\)
+and elt\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,sleep\(( )*[1-9]\d*( )*\)\)
+or elt\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,sleep\(( )*[1-9]\d*( )*\)\)
+and ( )*[1-9]\d+( )*=\(select ( )*[1-9]\d+( )* from pg_sleep\(( )*[1-9]\d*( )*\)\)
+or ( )*[1-9]\d+( )*=\(select ( )*[1-9]\d+( )* from pg_sleep\(( )*[1-9]\d*( )*\)\)
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)\)
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)\)
+waitfor delay ( )*(')*()*0:0:( )*[1-9]\d*( )*(')*()*
+waitfor delay ( )*(')*()*0:0:( )*[1-9]\d*( )*(')*()*
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from sysusers as sys1,sysusers as sys2,sysusers as sys3,sysusers as sys4,sysusers as sys5,sysusers as sys6,sysusers as sys7\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from sysusers as sys1,sysusers as sys2,sysusers as sys3,sysusers as sys4,sysusers as sys5,sysusers as sys6,sysusers as sys7\)
+and ( )*[1-9]\d+( )*=dbms_pipe.receive_message\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*,( )*[1-9]\d*( )*\)
+or ( )*[1-9]\d+( )*=dbms_pipe.receive_message\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*,( )*[1-9]\d*( )*\)
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from all_users t1,all_users t2,all_users t3,all_users t4,all_users t5\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from all_users t1,all_users t2,all_users t3,all_users t4,all_users t5\)
+and ( )*[1-9]\d+( )*=like\(( )*(')*()*abcdefg( )*(')*()*,upper\(hex\(randomblob\(( )*[1-9]\d*( )*00000000/2\)\)\)\)
+or ( )*[1-9]\d+( )*=like\(( )*(')*()*abcdefg( )*(')*()*,upper\(hex\(randomblob\(( )*[1-9]\d*( )*00000000/2\)\)\)\)
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from rdb\$fields as t1,rdb\$types as t2,rdb\$collations as t3,rdb\$functions as t4\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from rdb\$fields as t1,rdb\$types as t2,rdb\$collations as t3,rdb\$functions as t4\)
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from domain.domains as t1,domain.columns as t2,domain.tables as t3\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from domain.domains as t1,domain.columns as t2,domain.tables as t3\)
+and ( )*(')*()*[a-zA-Z]\w*( )*(')*()*=regexp_substring\(repeat\(right\(char\(( )*[1-9]\d+( )*\),0\),( )*[1-9]\d*( )*000000000\),null\)
+or ( )*(')*()*[a-zA-Z]\w*( )*(')*()*=regexp_substring\(repeat\(right\(char\(( )*[1-9]\d+( )*\),0\),( )*[1-9]\d*( )*000000000\),null\)
+and ( )*(')*()*[a-zA-Z]\w*( )*(')*()*=regexp_substring\(repeat\(left\(crypt_key\(( )*(')*()*aes( )*(')*()*,null\),0\),( )*[1-9]\d*( )*00000000\),null\)
+or ( )*(')*()*[a-zA-Z]\w*( )*(')*()*=regexp_substring\(repeat\(left\(crypt_key\(( )*(')*()*aes( )*(')*()*,null\),0\),( )*[1-9]\d*( )*00000000\),null\)
+and ( )*[1-9]\d+( )*=\(select count\(\*\) from sysmaster:syspaghdr\)
+or ( )*[1-9]\d+( )*=\(select count\(\*\) from sysmaster:syspaghdr\)
+
+#time-based boolean tests - numerous clauses
+procedure analyse\(extractvalue\(( )*[1-9]\d+( )*,concat\(( )*(')*()*\\( )*(')*()*,\(benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)\)\)\),1\)
+procedure analyse\(extractvalue\(( )*[1-9]\d+( )*,concat\(( )*(')*()*\\( )*(')*()*,\(benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)\)\)\),1\)
+case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then sleep\(( )*[1-9]\d*( )*\) else ( )*[1-9]\d+( )* end
+select \* from \(select\(sleep\(( )*[1-9]\d*( )*\)\)\)( )*[a-zA-Z]\w*( )*
+case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)\) else ( )*[1-9]\d+( )*
+( )*[1-9]\d+( )*=( )*[1-9]\d+( )* and sleep\(( )*[1-9]\d*( )*\)
+elt\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,sleep\(( )*[1-9]\d*( )*\)\)
+make_set\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,sleep\(( )*[1-9]\d*( )*\)\)
+select ( )*[1-9]\d+( )* from pg_sleep\(( )*[1-9]\d*( )*\)
+select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select count\(\*\) from sysusers as sys1,sysusers as sys2,sysusers as sys3,sysusers as sys4,sysusers as sys5,sysusers as sys6,sysusers as sys7\) else ( )*[1-9]\d+( )* end\)
+begin if \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then dbms_lock.sleep\(( )*[1-9]\d*( )*\); else dbms_lock.sleep\(0\); end if; end;
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then dbms_pipe.receive_message\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*,( )*[1-9]\d*( )*\) else ( )*[1-9]\d+( )* end\) from dual
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select count\(\*\) from all_users t1,all_users t2,all_users t3,all_users t4,all_users t5\) else ( )*[1-9]\d+( )* end\) from dual
+select like\(( )*(')*()*abcdefg( )*(')*()*,upper\(hex\(randomblob\(( )*[1-9]\d*( )*00000000/2\)\)\)\)
+select count\(\*\) from rdb\$fields as t1,rdb\$types as t2,rdb\$collations as t3,rdb\$functions as t4
+select count\(\*\) from domain.domains as t1,domain.columns as t2,domain.tables as t3
+select count\(\*\) from sysibm.systables as t1,sysibm.systables as t2,sysibm.systables as t3
+
+#time-based boolean tests - order by, group by clause
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then sleep\(( )*[1-9]\d*( )*\) else ( )*[1-9]\d+( )* end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)\) else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from mysql.db\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select ( )*[1-9]\d+( )* from pg_sleep\(( )*[1-9]\d*( )*\)\) else 1/\(select 0\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)\) else 1/\(select 0\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select count\(\*\) from sysusers as sys1,sysusers as sys2,sysusers as sys3,sysusers as sys4,sysusers as sys5,sysusers as sys6,sysusers as sys7\) else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* union all select ( )*[1-9]\d+( )*\) end\)
+begin if \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then dbms_lock.sleep\(( )*[1-9]\d*( )*\); else dbms_lock.sleep\(0\); end if; end;
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then dbms_pipe.receive_message\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*,( )*[1-9]\d*( )*\) else 1/\(select 0 from dual\) end\) from dual
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then \(select count\(\*\) from all_users t1,all_users t2,all_users t3,all_users t4,all_users t5\) else 1/\(select 0 from dual\) end\) from dual

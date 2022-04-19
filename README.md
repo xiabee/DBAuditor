@@ -10,15 +10,7 @@ A very simple auditor of SQL database, too young too naive.
 
 ### 
 
-### 当前进度
-
-* 实现文件读取
-
-* 实现正则匹配
-
-* 待审文件：`./test.txt`
-
-
+### 
 
 ### 运行方式
 

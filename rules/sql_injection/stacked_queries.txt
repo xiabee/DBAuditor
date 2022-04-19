@@ -1,0 +1,24 @@
+#stacked queries tests
+select sleep\(( )*[1-9]\d*( )*\)
+select \* from \(select\(sleep\(( )*[1-9]\d*( )*\)\)\)( )*[a-zA-Z]\w*( )*
+select \* from \(select\(sleep\(( )*[1-9]\d*( )*\)\)\)( )*[a-zA-Z]\w*( )*
+select benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)
+select benchmark\(( )*[1-9]\d*( )*000000,md5\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*\)\)
+select pg_sleep\(( )*[1-9]\d*( )*\)
+select count\(\*\) from generate_series\(1,( )*[1-9]\d*( )*000000\)
+create or replace function sleep\(int\) returns int as ( )*(')*()*/lib/libc.so.6( )*(')*()*,( )*(')*()*sleep( )*(')*()* language ( )*(')*()*c( )*(')*()* strict; select sleep\(( )*[1-9]\d*( )*\)
+create or replace function sleep\(int\) returns int as ( )*(')*()*/lib/libc.so.6( )*(')*()*,( )*(')*()*sleep( )*(')*()* language ( )*(')*()*c( )*(')*()* strict; select sleep\(( )*[1-9]\d*( )*\)
+waitfor delay ( )*(')*()*0:0:( )*[1-9]\d*( )*(')*()*
+waitfor delay ( )*(')*()*0:0:( )*[1-9]\d*( )*(')*()*
+select dbms_pipe.receive_message\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*,( )*[1-9]\d*( )*\) from dual
+select dbms_pipe.receive_message\(( )*(')*()*[a-zA-Z]\w*( )*(')*()*,( )*[1-9]\d*( )*\) from dual
+select count\(\*\) from all_users t1,all_users t2,all_users t3,all_users t4,all_users t5
+select case when \([inference]\) then \(select count\(\*\) from all_users t1,all_users t2,all_users t3,all_users t4,all_users t5\) else ( )*[1-9]\d+( )* end from dual
+begin dbms_lock.sleep\(( )*[1-9]\d*( )*\); end
+begin user_lock.sleep\(( )*[1-9]\d*( )*\); end
+select count\(\*\) from sysibm.systables as t1,sysibm.systables as t2,sysibm.systables as t3
+select like\(( )*(')*()*abcdefg( )*(')*()*,upper\(hex\(randomblob\(( )*[1-9]\d*( )*00000000/2\)\)\)\)
+select count\(\*\) from rdb\$fields as t1,rdb\$types as t2,rdb\$collations as t3,rdb\$functions as t4
+select count\(\*\) from domain.domains as t1,domain.columns as t2,domain.tables as t3
+call regexp_substring\(repeat\(right\(char\(( )*[1-9]\d+( )*\),0\),( )*[1-9]\d*( )*00000000\),null\)
+call regexp_substring\(repeat\(left\(crypt_key\(( )*(')*()*aes( )*(')*()*,null\),0\),( )*[1-9]\d*( )*00000000\),null\)

@@ -1,0 +1,56 @@
+#target information test
+VERSION\(\)
+CURRENT_USER\(\)
+DATABASE\(\)
+\@\@HOSTNAME
+SELECT table_comment FROM INFORMATION_SCHEMA.TABLES WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND table_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT column_comment FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND table_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND column_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT super_priv FROM mysql.user WHERE user=( )*(')*()*[a-zA-Z]\S+( )*(')*()* LIMIT 0,1\)=( )*(')*()*Y( )*(')*()*
+SELECT name FROM mysql.func WHERE name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* LIMIT 0,1\)=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT user FROM mysql.user
+SELECT grantee FROM INFORMATION_SCHEMA.USER_PRIVILEGES
+SELECT DISTINCT\(user\) FROM mysql.user LIMIT ( )*[1-9]\d*( )*,1
+SELECT DISTINCT\(grantee\) FROM INFORMATION_SCHEMA.USER_PRIVILEGES LIMIT ( )*[1-9]\d*( )*,1
+SELECT COUNT\(DISTINCT\(user\)\) FROM mysql.user
+SELECT COUNT\(DISTINCT\(grantee\)\) FROM INFORMATION_SCHEMA.USER_PRIVILEGES
+SELECT user,password FROM mysql.user
+SELECT COUNT\(DISTINCT\(password\)\) FROM mysql.user WHERE user=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT DISTINCT\(password\) FROM mysql.user WHERE user=( )*(')*()*[a-zA-Z]\S+( )*(')*()* LIMIT ( )*[1-9]\d*( )*,1
+SELECT user,select_priv,insert_priv,update_priv,delete_priv,create_priv,drop_priv,reload_priv,shutdown_priv,process_priv,file_priv,grant_priv,references_priv,index_priv,alter_priv,show_db_priv,super_priv,create_tmp_table_priv,lock_tables_priv,execute_priv,repl_slave_priv,repl_client_priv,create_view_priv,show_view_priv,create_routine_priv,alter_routine_priv,create_user_priv FROM mysql.user
+SELECT grantee,privilege_type FROM INFORMATION_SCHEMA.USER_PRIVILEGES
+SELECT select_priv,insert_priv,update_priv,delete_priv,create_priv,drop_priv,reload_priv,shutdown_priv,process_priv,file_priv,grant_priv,references_priv,index_priv,alter_priv,show_db_priv,super_priv,create_tmp_table_priv,lock_tables_priv,execute_priv,repl_slave_priv,repl_client_priv,create_view_priv,show_view_priv,create_routine_priv,alter_routine_priv,create_user_priv FROM mysql.user WHERE user=( )*(')*()*[a-zA-Z]\S+( )*(')*()* LIMIT ( )*[1-9]\d*( )*,1
+SELECT DISTINCT\(privilege_type\) FROM INFORMATION_SCHEMA.USER_PRIVILEGES WHERE grantee ( )*[a-zA-Z]\S+( )* ( )*(')*()*[a-zA-Z]\S+( )*(')*()* LIMIT ( )*[1-9]\d*( )*,1
+SELECT COUNT\(\*\) FROM mysql.user WHERE user=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT COUNT\(DISTINCT\(privilege_type\)\) FROM INFORMATION_SCHEMA.USER_PRIVILEGES WHERE grantee ( )*[a-zA-Z]\S+( )* ( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT db FROM mysql.db
+SELECT schema_name FROM INFORMATION_SCHEMA.SCHEMATA
+SELECT DISTINCT\(db\) FROM mysql.db LIMIT ( )*[1-9]\d*( )*,1
+SELECT DISTINCT\(schema_name\) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT ( )*[1-9]\d*( )*,1
+SELECT COUNT\(DISTINCT\(db\)\) FROM mysql.db
+SELECT COUNT\(DISTINCT\(schema_name\)\) FROM INFORMATION_SCHEMA.SCHEMATA
+SELECT table_schema,table_name FROM INFORMATION_SCHEMA.TABLES
+SELECT COUNT\(table_name\) FROM INFORMATION_SCHEMA.TABLES WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()* LIMIT ( )*[1-9]\d*( )*,1
+SELECT column_name,column_type FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT column_type FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND column_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT COUNT\(column_name\) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name=( )*(')*()*[a-zA-Z]\S+( )*(')*()* AND table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT ( )*[a-zA-Z]\S+( )* FROM ( )*[a-zA-Z]\S+( )*.( )*[a-zA-Z]\S+( )* ORDER BY ( )*[a-zA-Z]\S+( )*
+SELECT COUNT\(\*\) FROM ( )*[a-zA-Z]\S+( )*.( )*[a-zA-Z]\S+( )*
+SELECT ( )*[a-zA-Z]\S+( )* FROM ( )*[a-zA-Z]\S+( )*.( )*[a-zA-Z]\S+( )* ORDER BY ( )*[a-zA-Z]\S+( )* LIMIT ( )*[1-9]\d*( )*,1
+SELECT db FROM mysql.db WHERE ( )*[a-zA-Z]\S+( )*
+SELECT schema_name FROM INFORMATION_SCHEMA.SCHEMATA WHERE ( )*[a-zA-Z]\S+( )*
+SELECT DISTINCT\(db\) FROM mysql.db WHERE ( )*[a-zA-Z]\S+( )*
+SELECT COUNT\(DISTINCT\(schema_name\)\) FROM INFORMATION_SCHEMA.SCHEMATA WHERE ( )*[a-zA-Z]\S+( )*
+SELECT DISTINCT\(schema_name\) FROM INFORMATION_SCHEMA.SCHEMATA WHERE ( )*[a-zA-Z]\S+( )*
+SELECT COUNT\(DISTINCT\(db\)\) FROM mysql.db WHERE ( )*[a-zA-Z]\S+( )*
+SELECT table_schema,table_name FROM INFORMATION_SCHEMA.TABLES WHERE ( )*[a-zA-Z]\S+( )*
+SELECT DISTINCT\(table_name\) FROM INFORMATION_SCHEMA.TABLES WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT COUNT\(DISTINCT\(table_schema\)\) FROM INFORMATION_SCHEMA.TABLES WHERE ( )*[a-zA-Z]\S+( )*
+SELECT DISTINCT\(table_schema\) FROM INFORMATION_SCHEMA.TABLES WHERE ( )*[a-zA-Z]\S+( )*
+SELECT COUNT\(DISTINCT\(table_name\)\) FROM INFORMATION_SCHEMA.TABLES WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT table_schema,table_name FROM INFORMATION_SCHEMA.COLUMNS WHERE ( )*[a-zA-Z]\S+( )*
+SELECT DISTINCT\(table_name\) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*
+SELECT COUNT\(DISTINCT\(table_schema\)\) FROM INFORMATION_SCHEMA.COLUMNS WHERE ( )*[a-zA-Z]\S+( )*
+SELECT DISTINCT\(table_schema\) FROM INFORMATION_SCHEMA.COLUMNS WHERE ( )*[a-zA-Z]\S+( )*
+SELECT COUNT\(DISTINCT\(table_name\)\) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema=( )*(')*()*[a-zA-Z]\S+( )*(')*()*

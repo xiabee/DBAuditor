@@ -1,0 +1,63 @@
+#boolean-based blind tests - where/having clause1
+and ( )*[1-9]\d+( )*=( )*[1-9]\d+( )*
+or ( )*[1-9]\d+( )*=( )*[1-9]\d+( )*
+or not ( )*[1-9]\d+( )*=( )*[1-9]\d+( )*
+rlike \(select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else 0x28 end\)\)
+and make_set\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*\)
+or make_set\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*\)
+and elt\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*\)
+or elt \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*\)
+and \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\)\*( )*[1-9]\d+( )*
+or \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\)\*( )*[1-9]\d+( )*
+and \(select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then null else cast\(( )*(')*()*[1-9]\d+( )*(')*()* as numeric\) end\)\) is null
+or \(select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then null else cast\(( )*(')*()*[1-9]\d+( )*(')*()* as numeric\) end\)\) is null
+and \(select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then null else ctxsys.drithsx.sn\(1,( )*[1-9]\d+( )*\) end\) from dual\) is null
+or \(select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then null else ctxsys.drithsx.sn\(1,( )*[1-9]\d+( )*\) end\) from dual\) is null
+
+#boolean-based blind tests - parameter replace
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+make_set\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*\)
+make_set\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d*( )*\)
+elt\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*\)
+elt\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d*( )*\)
+
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else 1/\(select 0\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else 1/\(select 0\) end\)
+select \* from generate_series\(( )*[1-9]\d+( )*,( )*[1-9]\d+( )*,case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else 0 end\) limit 1
+select ( )*[1-9]\d*( )* from generate_series\(( )*[1-9]\d+( )*,( )*[1-9]\d+( )*,case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else 0 end\) limit 1
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* union all select ( )*[1-9]\d+( )*\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* union all select ( )*[1-9]\d+( )*\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else cast\(1 as int\)/\(select 0 from dual\) end\) from dual
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else cast\(1 as int\)/\(select 0 from dual\) end\) from dual
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else 1/0 end\) from sysmaster:sysdual\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else ( )*[1-9]\d+( )* end\) from sysmaster:sysdual\)
+iif\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d+( )*,1/0\)
+iif\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d*( )*,1/0\)
+case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from dual union select ( )*[1-9]\d+( )* from dual\) end
+case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from dual union select ( )*[1-9]\d+( )* from dual\) end
+
+#boolean-based blind tests - order by, group by clause 
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else 1/\(select 0\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else 1/\(select 0\) end\)
+select \* from generate_series\(( )*[1-9]\d+( )*,( )*[1-9]\d+( )*,case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else 0 end\) limit 1
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* union all select ( )*[1-9]\d+( )*\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* union all select ( )*[1-9]\d+( )*\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else cast\(1 as int\)/\(select 0 from dual\) end\) from dual
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d*( )* else cast\(1 as int\)/\(select 0 from dual\) end\) from dual
+iif\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,1,1/0
+iif\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,( )*[1-9]\d*( )*,1/0
+case when ( )*[1-9]\d+( )*=( )*[1-9]\d+( )* then 1 else null end
+
+#boolean-based blind tests - stacked queries
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* from information_schema.plugins\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else 1/\(select 0\) end\)
+select \* from generate_series\(( )*[1-9]\d+( )*,( )*[1-9]\d+( )*,case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else 0 end\) limit 1
+iif\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) select ( )*[1-9]\d+( )* else drop function ( )*[a-zA-Z]\w*( )*
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then 1 else ( )*[1-9]\d+( )*\*\(select ( )*[1-9]\d+( )* union all select ( )*[1-9]\d+( )*\) end\)
+select \(case when \(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*\) then ( )*[1-9]\d+( )* else cast\(1 as int\)/\(select 0 from dual\) end\) from dual
+iif\(( )*[1-9]\d+( )*=( )*[1-9]\d+( )*,1,1/0\)
