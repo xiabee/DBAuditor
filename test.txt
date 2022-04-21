@@ -1,4 +1,3 @@
-
 #boolean-based blind tests - where/having clause1
 and [random]=[random]
 or [random]=[random]
