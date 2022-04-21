@@ -10,7 +10,7 @@ func Sql_injection_detection(sql_file string, rules_dir string) bool {
 	if !pre.HasSuffix(rules_dir, "/") {
 		rules_dir += "/"
 	}
-	// 目录拼接预处理
+	// 目录拼接预处理，防止输入时忘记添加尾部"/"
 
 	sql_data := pre.Readlines(sql_file)
 	rules_file := pre.Get_files(rules_dir)

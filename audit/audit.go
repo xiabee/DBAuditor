@@ -19,4 +19,4 @@ func Audit(data string, rules string) bool {
 	return result1 != nil
 }
 
-// 基本匹配规则：正则匹配成功返回true
+// 基本匹配规则：正则匹配成功返回true，否则返回false

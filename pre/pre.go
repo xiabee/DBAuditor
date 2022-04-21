@@ -23,7 +23,6 @@ func Readlines(filename string) []string {
 			break
 		}
 		data = append(data, string(line))
-		// fmt.Println(string(data))
 	}
 	return data
 }
